@@ -1,3 +1,12 @@
+on firmware_mounts_complete
+   rm /dev/.booting
+
+on late-init
+    # Remove a file to wake up anything waiting for firmware.
+    trigger firmware_mounts_complete
+
+    trigger boot
+	
 on boot
     start mpdecision
 
@@ -87,6 +96,9 @@ service sbinqseecomd /sbin/qseecomd
     user root
     group root
     seclabel u:r:recovery:s0
+
+on property:ro.crypto.state=encrypted
+    start sbinqseecomd
 
 on fs
     chmod 0660 /dev/qseecom
