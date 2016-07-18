@@ -23,7 +23,7 @@ PRODUCT_PACKAGES += \
     init.recovery.touchtowake.rc
 
 # Keymaster
-    $(shell mkdir -p out/target/product/$(PRODUCT_DEVICE)/recovery/root/vendor/firmware/keymaster)
+    $(shell mkdir -p out/target/product/$(PRODUCT_DEVICE)/recovery/root/firmware/image/keymaster)
     $(shell mkdir -p out/target/product/$(PRODUCT_DEVICE)/recovery/root/vendor/lib)
     $(shell mkdir -p out/target/product/$(PRODUCT_DEVICE)/recovery/root/vendor/lib/hw)
     $(shell mkdir -p out/target/product/$(PRODUCT_DEVICE)/recovery/root/sbin)
@@ -35,10 +35,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/root/sbin/librpmb.so:recovery/root/sbin/librpmb.so \
     $(LOCAL_PATH)/root/sbin/libssd.so:recovery/root/sbin/libssd.so \
     $(LOCAL_PATH)/root/sbin/qseecomd:recovery/root/sbin/qseecomd \
-    $(LOCAL_PATH)/root/vendor/firmware/keymaste.b00:recovery/root/vendor/firmware/keymaster/keymaste.b00 \
-    $(LOCAL_PATH)/root/vendor/firmware/keymaste.b01:recovery/root/vendor/firmware/keymaster/keymaste.b01 \
-    $(LOCAL_PATH)/root/vendor/firmware/keymaste.b02:recovery/root/vendor/firmware/keymaster/keymaste.b02 \
-    $(LOCAL_PATH)/root/vendor/firmware/keymaste.b03:recovery/root/vendor/firmware/keymaster/keymaste.b03 \
-    $(LOCAL_PATH)/root/vendor/firmware/keymaste.mdt:recovery/root/vendor/firmware/keymaster/keymaste.mdt \
+    $(LOCAL_PATH)/root/firmware/image/cmnlib.b00:recovery/root/firmware/image/keymaster/cmnlib.b00 \
+    $(LOCAL_PATH)/root/firmware/image/cmnlib.b01:recovery/root/firmware/image/keymaster/cmnlib.b01 \
+    $(LOCAL_PATH)/root/firmware/image/cmnlib.b02:recovery/root/firmware/image/keymaster/cmnlib.b02 \
+    $(LOCAL_PATH)/root/firmware/image/cmnlib.b03:recovery/root/firmware/image/keymaster/cmnlib.b03 \
+    $(LOCAL_PATH)/root/firmware/image/cmnlib.mdt:recovery/root/firmware/image/keymaster/cmnlib.mdt \
+    $(LOCAL_PATH)/root/firmware/image/keymaste.b00:recovery/root/firmware/image/keymaster/keymaste.b00 \
+    $(LOCAL_PATH)/root/firmware/image/keymaste.b01:recovery/root/firmware/image/keymaster/keymaste.b01 \
+    $(LOCAL_PATH)/root/firmware/image/keymaste.b02:recovery/root/firmware/image/keymaster/keymaste.b02 \
+    $(LOCAL_PATH)/root/firmware/image/keymaste.b03:recovery/root/firmware/image/keymaster/keymaste.b03 \
+    $(LOCAL_PATH)/root/firmware/image/keymaste.mdt:recovery/root/firmware/image/keymaster/keymaste.mdt \
     $(LOCAL_PATH)/root/vendor/lib/libQSEEComAPI.so:recovery/root/vendor/lib/libQSEEComAPI.so \
     $(LOCAL_PATH)/root/vendor/lib/hw/keystore.msm8974.so:recovery/root/vendor/lib/hw/keystore.msm8974.so
