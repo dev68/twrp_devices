@@ -27,10 +27,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # inherit twrp configs
-$(call inherit-product, device/lge/d856/recovery/twrp.mk)
+$(call inherit-product, device/lge/vs985/recovery/twrp.mk)
 
-PRODUCT_NAME := omni_d856
-PRODUCT_DEVICE := d856
+PRODUCT_NAME := omni_vs985
+PRODUCT_DEVICE := vs985
 PRODUCT_BRAND := LG
 PRODUCT_MODEL := G3
 PRODUCT_MANUFACTURER := LG
