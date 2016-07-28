@@ -1,4 +1,4 @@
-LOCAL_PATH := device/lge/d855/recovery
+LOCAL_PATH := device/lge/d852/recovery
 
 # Charger
 PRODUCT_PACKAGES += \
