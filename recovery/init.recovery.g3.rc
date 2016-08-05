@@ -80,31 +80,12 @@ service thermal-engine /system/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
 
-# used only for bringing up decrypt and keeping it around for future ref
-service logd /system/bin/logd
-    disabled
-    class core
-    socket logd stream 0666 logd logd
-    socket logdr seqpacket 0666 logd logd
-    socket logdw dgram 0222 logd logd
-    group root system
-     writepid /dev/cpuset/system-background/tasks
-
 service sbinqseecomd /sbin/qseecomd
     oneshot
     disabled
     user root
     group root
     seclabel u:r:recovery:s0
-
-on property:ro.crypto.state=encrypted
-    start sbinqseecomd
-
-on fs
-    chmod 0660 /dev/qseecom
-    chown system drmrpc /dev/qseecom
-    chmod 0664 /dev/ion
-    chown system system /dev/ion
 
 on property:ro.crypto.state=encrypted
     start sbinqseecomd
