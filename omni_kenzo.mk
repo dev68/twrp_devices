@@ -1,0 +1,15 @@
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# inherit twrp configs
+$(call inherit-product, device/xiaomi/kenzo/recovery/twrp.mk)
+
+# Device identifier. This must come after all inclusions
+PRODUCT_NAME := omni_kenzo
+PRODUCT_DEVICE := kenzo
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_MODEL := Redmi Note 3 Pro
