@@ -1,15 +1,11 @@
 LOCAL_PATH := device/xiaomi/kenzo/recovery
 
-# Kernel
-PRODUCT_COPY_FILES += \
-    device/xiaomi/kenzo/kernel:kernel
-
 # Power
 PRODUCT_PACKAGES += \
     init.qcom.power.rc
 
 # Recovery
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -20,6 +16,8 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_USES_LOGD := true
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # TWRP
 TW_THEME := portrait_hdpi
