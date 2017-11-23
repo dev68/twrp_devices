@@ -62,6 +62,7 @@ RECOVERY_SDCARD_ON_DATA := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # TWRP Flags
+RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/devices/mdp.0/qcom\x2cmdss_fb_primary.175/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
